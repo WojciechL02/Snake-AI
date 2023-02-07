@@ -2,9 +2,11 @@ import pygame
 from food import Food
 from snake import Snake
 from decision_tree.prepare_data import create_dataset
+from naive_bayes.prepare_data import create_bayes_dataset
 from agents import (MLPAgent,
                     HumanAgent,
                     DecisionTreeAgent,
+                    NaiveBayesAgent,
                     RandomForestAgent,
                     SVMAgent)
 
@@ -20,12 +22,17 @@ def main():
     food = Food(block_size, bounds, lifetime=100)
 
     # agent = HumanAgent(block_size, bounds)
-    dataset = create_dataset("data")  # Compulsory for RF, DT, SVM !
-    agent = DecisionTreeAgent(dataset)
+
+    # dataset = create_dataset("data")  # Compulsory for RF, DT, SVM !
+    # agent = DecisionTreeAgent(dataset)
     # agent = RandomForestAgent(dataset)
     # agent = SVMAgent(dataset)
-    # path = "18_0.03_5_128_.pth"
-    # agent = MLPAgent(path)
+
+    # dataset = create_bayes_dataset("data")  # Compulsory for Naive Bayes !
+    # agent = NaiveBayesAgent(dataset)
+
+    path = "18_0.03_5_128_.pth"
+    agent = MLPAgent(path)
 
     scores = []
     run = True
