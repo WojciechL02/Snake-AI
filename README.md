@@ -36,16 +36,32 @@ pip install -r requirements.txt
 | Q-learning | 3.29 |
 
 ### ID3
-[[<img src="docs/id3.gif" width="200" height="200"/>
+<p float="left">
+  <img src="docs/id3.gif" width="250" height="250"/>
+  <img src="docs/id3.png" width="250" height="250"/>
+</p>
 
 ### Random Forest
-[[<img src="docs/id3.gif" width="200" height="200"/>
+<p float="left">
+  <img src="docs/id3.gif" width="250" height="250"/>
+  <img src="docs/id3.png" width="250" height="250"/>
+</p>
 
 ### Naive Bayes
-[[<img src="docs/id3.gif" width="200" height="200"/>
+<p float="left">
+  <img src="docs/id3.gif" width="250" height="250"/>
+  <img src="docs/id3.png" width="250" height="250"/>
+</p>
 
 ### MLP
-<img src="docs/mlp.gif" width="200" height="200"/>
+<img src="docs/mlp.gif" width="250" height="250"/>
+<p float="left">
+  <img src="docs/mlp_loss.png" />
+  <img src="docs/mlp_acc.png" />
+</p>
 
 ### Q-learning
-<img src="docs/qlearning.gif" width="200" height="200"/>
+<p float="left">
+  <img src="docs/qlearning.gif" width="250" height="250"/>
+  <img src="docs/qlearning.png" width="250" height="250"/>
+</p>
