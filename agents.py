@@ -6,13 +6,17 @@ import pickle
 import torch
 from torch import from_numpy
 from snake import Direction
+
 from decision_tree import prepare_data
+from decision_tree.model import ID3
+
+from naive_bayes.model import NaiveBayesClassifier
+from naive_bayes.prepare_data import state_to_sample
 
 from nn.model import MLP
 from nn.dataset import BCDataset
 
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 
 
@@ -82,6 +86,40 @@ class MLPAgent:
         pass
 
 
+class DecisionTreeAgent:
+    def __init__(self, dataset):
+        self.dataset = dataset
+        self.id3 = ID3()
+        self.id3.fit(self.dataset)
+
+    def act(self, game_state) -> Direction:
+        """ Calculate data sample attributes from game_state and run the trained model to predict snake's action/direction"""
+        data_sample = prepare_data.game_state_to_data_sample(game_state)
+        decision = self.id3.decide_sample(data_sample)
+        return Direction(decision)
+
+    def dump_data(self):
+        pass
+
+
+class NaiveBayesAgent:
+    def __init__(self, dataset):
+        self.dataset = dataset
+        self.nb = NaiveBayesClassifier(n_classes=4, n_attr=13, max_attr_val=4, smooth=5)
+        self.nb.fit(dataset)
+
+    def act(self, game_state) -> Direction:
+        """ Calculate data sample attributes from game_state and run the trained model to predict snake's action/direction"""
+        data_sample = state_to_sample(game_state)
+        decision = self.nb.predict_sample(data_sample[:-1])
+        return Direction(decision)
+
+    def dump_data(self):
+        pass
+
+
+#=============== FROM SKLEARN ===============#
+
 class RandomForestAgent:
     def __init__(self, dataset):
         self.dataset = dataset
@@ -94,25 +132,6 @@ class RandomForestAgent:
         """ Calculate data sample attributes from game_state and run the trained model to predict snake's action/direction"""
         data_sample = prepare_data.game_state_to_data_sample(game_state)
         decision = self.rf.predict(data_sample[:-1].reshape(1, -1))
-        return Direction(decision)
-
-    def dump_data(self):
-        pass
-
-
-class DecisionTreeAgent:
-    def __init__(self, dataset):
-        self.dataset = dataset
-        self.tree = DecisionTreeClassifier(
-            criterion="entropy", random_state=42)
-        y = self.dataset[:, -1]
-        X = self.dataset[:, :-1]
-        self.tree.fit(X, y)
-
-    def act(self, game_state) -> Direction:
-        """ Calculate data sample attributes from game_state and run the trained model to predict snake's action/direction"""
-        data_sample = prepare_data.game_state_to_data_sample(game_state)
-        decision = self.tree.predict(data_sample[:-1].reshape(1, -1))
         return Direction(decision)
 
     def dump_data(self):
