@@ -14,21 +14,13 @@ pip install -r requirements.txt
 ## Usage
 
 ```python
-import foobar
 
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
 ```
 
 ## Algorithms
 
 * ID3 - decision tree
+* Random Forest
 * Naive Bayes
 * Neural Network (with Pytorch)
 * Q-learning
@@ -38,15 +30,19 @@ foobar.singularize('phenomena')
 | Model  | AVG score in 100 games |
 | --- | --- |
 | ID3  | 6.2 |
+| Random Forest |  |
 | Naive Bayes |  |
 | MLP | 19.58 |
 | Q-learning | 3.29 |
 
 ### ID3
-<img src="docs/id3.gif" width="200" height="200"/>
+[[<img src="docs/id3.gif" width="200" height="200"/>
+
+### Random Forest
+[[<img src="docs/id3.gif" width="200" height="200"/>
 
 ### Naive Bayes
-<img src="docs/id3.gif" width="200" height="200"/>
+[[<img src="docs/id3.gif" width="200" height="200"/>
 
 ### MLP
 <img src="docs/mlp.gif" width="200" height="200"/>
