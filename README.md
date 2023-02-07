@@ -56,8 +56,8 @@ pip install -r requirements.txt
 ### MLP
 <img src="docs/mlp.gif" width="250" height="250"/>
 <p float="left">
-  <img src="docs/mlp_loss.png" />
-  <img src="docs/mlp_acc.png" />
+  <img src="docs/mlp_loss.png" width="400" height="200"/>
+  <img src="docs/mlp_acc.png" width="400" height="200"/>
 </p>
 
 ### Q-learning
