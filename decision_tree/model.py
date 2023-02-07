@@ -1,5 +1,5 @@
 import numpy as np
-from prepare_data import create_dataset, train_test_datasets
+from .prepare_data import create_dataset, train_test_datasets
 from sklearn.metrics import accuracy_score, recall_score, precision_score
 
 
