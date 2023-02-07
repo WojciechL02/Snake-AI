@@ -1,10 +1,6 @@
-import time
 import numpy as np
 from prepare_data import create_dataset, train_test_datasets
 from sklearn.metrics import accuracy_score, recall_score, precision_score
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
 
 
 class Node:
@@ -98,26 +94,14 @@ def main():
     train, test = train_test_datasets(dataset, train_size=0.8)
     y = test[:, -1]
 
-
     id3 = ID3()
-    dt = DecisionTreeClassifier(criterion="entropy", random_state=42)
-    rf = RandomForestClassifier(criterion="entropy", random_state=42)
-    svm = SVC(decision_function_shape='ovo', random_state=42)
-
 
     # st = time.process_time()
     id3.fit(train)
     # et = time.process_time()
     # print("time: ", et-st, "s\n")
-    dt.fit(train[:, :-1], train[:, -1])
-    rf.fit(train[:, :-1], train[:, -1])
-    svm.fit(train[:, :-1], train[:, -1])
-
 
     show_scores("ID3", train[:, -1], id3.predict(train), y, id3.predict(test))
-    show_scores("DT", train[:, -1], dt.predict(train[:, :-1]), y, dt.predict(test[:, :-1]))
-    show_scores("RF", train[:, -1], rf.predict(train[:, :-1]), y, rf.predict(test[:, :-1]))
-    show_scores("SVM", train[:, -1], svm.predict(train[:, :-1]), y, svm.predict(test[:, :-1]))
 
 
 if __name__ == "__main__":
