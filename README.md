@@ -43,7 +43,7 @@ foobar.singularize('phenomena')
 | Q-learning |  |
 
 ### ID3
-![](docs/id3.gif)  </br>
+![](docs/id3.gif =100x100)  </br>
 
 ### Naive Bayes
 ![](docs/id3.gif)  </br>
