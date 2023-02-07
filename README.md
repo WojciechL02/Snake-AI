@@ -21,24 +21,23 @@ pip install -r requirements.txt
 
 * ID3 - decision tree
 * Random Forest
-* Naive Bayes
+* Naive Bayes with Laplace smoothing
 * Neural Network (with Pytorch)
 * Q-learning
 
 ## Results
 
-| Model  | AVG score in 100 games |
-| --- | --- |
-| ID3  | 6.2 |
-| Random Forest |  |
-| Naive Bayes |  |
-| MLP | 19.58 |
-| Q-learning | 3.29 |
+| Model  | AVG score | Min score | Max score |
+| --- | --- | --- | --- |
+| ID3  | 6.2 | 1 | 13 |
+| Random Forest |  |  |  |
+| Naive Bayes | 4.49 | 0 | 17 |
+| MLP | 19.58 | 1 | 30 |
+| Q-learning | 3.29 | 0 | 12 |
 
 ### ID3
 <p float="left">
   <img src="docs/id3.gif" width="250" height="250"/>
-  <img src="docs/id3.png" width="250" height="300"/>
 </p>
 
 Max tree depth vs Accuracy
@@ -52,16 +51,20 @@ Max tree depth vs Accuracy
 | 15 | 0.97 | 0.90 | 0.0937 |
 
 ### Random Forest
-<p float="left">
+<!-- <p float="left">
   <img src="docs/id3.gif" width="250" height="250"/>
-  <img src="docs/id3.png" width="250" height="300"/>
-</p>
+</p> -->
 
 ### Naive Bayes
 <p float="left">
-  <img src="docs/id3.gif" width="250" height="250"/>
-  <img src="docs/id3.png" width="250" height="300"/>
+  <img src="docs/naivebayes.gif" width="250" height="250"/>
 </p>
+
+Laplace smoothing influence
+|  | Avg score | Min score | Max score |
+| --- | --- | --- | --- |
+| NB | 3.73 | 0 | 12 |
+| NB + smoothing | 4.49 | 0 | 17 |
 
 ### MLP
 <img src="docs/mlp.gif" width="250" height="250"/>
@@ -73,5 +76,5 @@ Max tree depth vs Accuracy
 ### Q-learning
 <p float="left">
   <img src="docs/qlearning.gif" width="250" height="250"/>
-  <img src="docs/qlearning.png" width="250" height="300"/>
+  <img src="docs/qlearning.png" width="300" height="250"/>
 </p>
