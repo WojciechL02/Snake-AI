@@ -38,19 +38,29 @@ pip install -r requirements.txt
 ### ID3
 <p float="left">
   <img src="docs/id3.gif" width="250" height="250"/>
-  <img src="docs/id3.png" width="250" height="250"/>
+  <img src="docs/id3.png" width="250" height="300"/>
 </p>
+
+Max tree depth vs Accuracy
+| max_depth | Train | Test | training time (s) |
+| --- | --- | --- | --- |
+| 2 | 0.42 | 0.41 | ~0.0 |
+| 5 | 0.64 | 0.62 | 0.0156 |
+| 6 | 0.87 | 0.84 | 0.0312 |
+| 8 | 0.9594 | 0.90 | 0.0625 |
+| 12 | 0.9665 | 0.90 | 0.0781 |
+| 15 | 0.97 | 0.90 | 0.0937 |
 
 ### Random Forest
 <p float="left">
   <img src="docs/id3.gif" width="250" height="250"/>
-  <img src="docs/id3.png" width="250" height="250"/>
+  <img src="docs/id3.png" width="250" height="300"/>
 </p>
 
 ### Naive Bayes
 <p float="left">
   <img src="docs/id3.gif" width="250" height="250"/>
-  <img src="docs/id3.png" width="250" height="250"/>
+  <img src="docs/id3.png" width="250" height="300"/>
 </p>
 
 ### MLP
@@ -63,5 +73,5 @@ pip install -r requirements.txt
 ### Q-learning
 <p float="left">
   <img src="docs/qlearning.gif" width="250" height="250"/>
-  <img src="docs/qlearning.png" width="250" height="250"/>
+  <img src="docs/qlearning.png" width="250" height="300"/>
 </p>
