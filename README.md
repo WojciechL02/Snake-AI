@@ -7,7 +7,6 @@ Machine Learning and Reinforcement Learning for Snake game in Python. This proje
 ## Installation
 
 
-
 ```bash
 pip install foobar
 ```
@@ -38,7 +37,19 @@ foobar.singularize('phenomena')
 
 | Model  | AVG score in 100 games |
 | --- | --- |
-| ID3  | Content Cell |
-| Naive Bayes | Content Cell |
-| MLP | Content Cell |
-| Q-learning | Content Cell |
+| ID3  |  |
+| Naive Bayes |  |
+| MLP |  |
+| Q-learning |  |
+
+### ID3
+![](docs/id3.gif)  </br>
+
+### Naive Bayes
+![](docs/id3.gif)  </br>
+
+### MLP
+![](docs/mlp.gif)  </br>
+
+### Q-learning
+![](docs/qlearning.gif)  </br>
