@@ -62,6 +62,8 @@ def main():
 
     print(f"Scores: {scores}")
     print(f"Average: {sum(scores)/len(scores)}")
+    print(f"Min: {min(scores)}")
+    print(f"Max: {max(scores)}")
     if agent.is_training:
         scores = torch.tensor(scores, dtype=torch.float).unsqueeze(0)
         scores = torch.nn.functional.avg_pool1d(scores, 31, stride=1)
